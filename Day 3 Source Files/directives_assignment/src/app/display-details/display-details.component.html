@@ -1,0 +1,8 @@
+
+<button type="button" (click)="toggle()">Display Details</button>
+<p *ngIf="this.n % 2 !=0 && this.n > 0">{{name}}</p>
+<ul *ngIf="this.n>0" style="list-style:none" >
+    <li *ngFor="let i of arr"> 
+      <p [ngStyle]="this.i>4 ? {backgroundColor:bgcolor()}:{}" [ngClass]="this.i>4 ? fontclass():{}">{{ i }}</p>
+    </li>
+</ul>
