@@ -1,0 +1,40 @@
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-7">
+     
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor = "let e of emp">
+
+                    <td>{{e.id}}</td>
+            
+                    <td>{{e.name}}</td>
+            
+                    <td>{{e.addr}}</td>
+            
+                    <td>{{e.mob}}</td>
+
+                    <td><button type="button" class="btn btn-info" (click)="getemployeebyid(e.id)">Edit</button></td>
+
+                    <td><button type="button" class="btn btn-danger" (click)="deleteDataById(e.id)" >Delete</button></td>
+                    
+                    <!-- (click)="deleteDataById(e.sid)"
+                    <td><button  class="btn btn-primary btn-lg" id="submitbtn" name="submit">Delete</button></td> -->
+            
+                </tr>
+              
+            </tbody>
+          </table>
+</div>
+    </div>
