@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="col-md-7">
+     
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr  *ngFor = "let e of emp1">
+        
+                            <td>{{e.id}}</td>
+                    
+                            <td>{{e.name}}</td>
+                    
+                            <td>{{e.addr}}</td>
+                    
+                            <td>{{e.mob}}</td>
+        
+                            <td><button type="button" class="btn btn-info" (click)="edit(e.id)">Edit</button></td>
+        
+                            <td><button type="button" class="btn btn-danger" (click)="deleteDataById(e.id)" >Delete</button></td>
+                            
+                            <!-- (click)="deleteDataById(e.sid)"
+                            <td><button  class="btn btn-primary btn-lg" id="submitbtn" name="submit">Delete</button></td> -->
+                    
+                        </tr>
+                      
+                    </tbody>
+                  </table>
+        </div>
+        </div>
+            <div class="col-md-4">
+                <form [formGroup]="employeeform">
+                <!-- <div class="form-group col-md-6">
+
+                    <input type="text" class="form-control" placeholder="Enter id" [pattern]="namepattern" >
+                    
+                </div> -->
+
+                
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" formControlName="name" placeholder="Enter name" [pattern]="namepattern">
+                    <div style="color: red;" *ngIf="employeeform.controls['name'].touched && employeeform.controls['name'].invalid">
+                        <span *ngIf="employeeform.controls['name'].hasError('required')">name is required</span>
+                        <span *ngIf="employeeform.controls['name'].hasError('pattern')">only alphabate with
+                            space between 2 to 20 charecters
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" formControlName="mob"  placeholder="Enter Mobile" formControlName="mob" required>
+                    <div style="color: red;" *ngIf="employeeform.controls['mob'].touched && employeeform.controls['mob'].invalid">
+                        <span *ngIf="employeeform.controls['mob'].hasError('required')">mobile no is required</span>
+                        <span *ngIf="employeeform.controls['mob'].getError?.length">use 10 digit mob no</span>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter Address" formControlName="addr" required>
+                    <div style="color: red;"  *ngIf="employeeform.controls['addr'].touched && employeeform.controls['addr'].invalid">
+                        <span *ngIf="employeeform.controls['addr'].hasError('required')">address is required</span>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <button class="btn btn-success btn-lg btn-block"  (click)="onSubmit()">Submit</button>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-warning btn-lg btn-block" (click)="reset()">reset</button>
+                </div>
+                </form>
+            </div>
+       
+    </div>
+</div>

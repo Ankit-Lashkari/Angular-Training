@@ -1,0 +1,11 @@
+.bgimg{
+    background-image: url('../assets/headerimg.jpg');
+    padding: auto;
+    
+}
+.rightcol {
+    float: right;
+    width: 40%;
+    padding: 30px;
+    /* height: 10px;  */
+  }
