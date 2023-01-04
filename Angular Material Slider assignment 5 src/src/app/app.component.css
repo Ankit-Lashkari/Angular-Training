@@ -1,0 +1,15 @@
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid gray;
+    padding: 10px;
+  }
+  .bg{
+    background-color: antiquewhite;
+  }
+  .bg2{
+    background-color: rgb(132, 216, 213);
+  }
+  .slidersize{
+    size: 10in;
+  }
